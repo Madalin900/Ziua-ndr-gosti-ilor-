@@ -11,15 +11,15 @@ const MAX_IMAGES = 5;
 let play = true;
 let noCount = 0;
 
-yesButton.addEventListener("click", handleYesClick);
+yesButton.addEventListener("click", handledaClick);
 
 noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
     const imageIndex = Math.min(noCount, MAX_IMAGES);
     changeImage(imageIndex);
-    resizeYesButton();
-    updateNoButtonText();
+    resizedaButton();
+    updatenuButtonText();
     if (noCount === MAX_IMAGES) {
       play = false;
     }
@@ -29,11 +29,11 @@ noButton.addEventListener("click", function () {
 function handleYesClick() {
   titleElement.innerHTML = "Yayyy!! :3";
   buttonsContainer.classList.add("hidden");
-  changeImage("yes");
+  changeImage("da");
 }
 
-function resizeYesButton() {
-  const computedStyle = window.getComputedStyle(yesButton);
+function resizedaButton() {
+  const computedStyle = window.getComputedStyle(daButton);
   const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
   const newFontSize = fontSize * 1.6;
 
@@ -58,6 +58,6 @@ function changeImage(image) {
   catImg.src = `img/cat-${image}.jpg`;
 }
 
-function updateNoButtonText() {
+function updatenoButtonText() {
   noButton.innerHTML = generateMessage(noCount);
 }
